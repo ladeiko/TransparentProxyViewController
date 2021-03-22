@@ -9,6 +9,8 @@ import UIKit
 import ImmediateAnimationController
 
 open class TransparentProxyViewController: UIViewController, UIViewControllerTransitioningDelegate {
+
+    public var customImmediateAnimationController: ImmediateAnimationController?
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -39,11 +41,11 @@ open class TransparentProxyViewController: UIViewController, UIViewControllerTra
     // MARK: - UIViewControllerTransitioningDelegate
     
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return ImmediateAnimationController.shared
+        return customImmediateAnimationController ?? ImmediateAnimationController.shared
     }
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return ImmediateAnimationController.shared
+        return customImmediateAnimationController ?? ImmediateAnimationController.shared
     }
 }
 
