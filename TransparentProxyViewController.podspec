@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "TransparentProxyViewController"
-  s.version = "1.1.0"
+  s.version = "1.1.1"
   s.summary = "Transparent UIViewController shown immediately with possibility to show another controller above self with animation"
   s.homepage = "https://github.com/ladeiko/TransparentProxyViewController"
   s.license = { :type => "CUSTOM", :file => "LICENSE" }
